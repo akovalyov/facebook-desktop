@@ -122,18 +122,12 @@
     var webview = document.getElementById("foo")
     var indicator = document.getElementById("preloader");
 
-    var loadstart = function() {
-      if (firstTime) {
-        // indicator.innerText = "loading...";
-      }
-    }
     var loadstop = function() {
       if (firstTime) {
         firstTime = false;
         indicator.style.display = 'none';
       }
     }
-    webview.addEventListener("did-start-loading", loadstart);
     webview.addEventListener("did-stop-loading", loadstop);
   }
 </script>
