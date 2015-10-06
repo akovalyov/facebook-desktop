@@ -3,7 +3,6 @@ var BrowserWindow = require('browser-window'); // Module to create native browse
 var Menu = require('menu');
 var MenuItem = require('menu-item');
 var Tray = require('tray');
-EventEmitter = require('events').EventEmitter
 var tray = null;
 // Report crashes to our server.
 require('crash-reporter').start();
