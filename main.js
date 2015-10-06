@@ -36,6 +36,8 @@ app.on('ready', function() {
 
   // and load the index.html of the app.
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  //when window is closed it is minimized to tray instead.
+  // this plag allows window to be closed from tray
   var forceExit = false;
   var contextMenu = Menu.buildFromTemplate([{
     label: 'Exit',
