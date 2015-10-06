@@ -18,5 +18,22 @@ Is it safe?/I want more details
 ===============================
 
 Short: Yes, it is.
+
 Long: Basically it is just a webview with single src. There is no cookies reading/sniffig from app itself.
 Everything is does is just wrapping the facebook website.
+
+Installation
+============
+
+````sh
+git clone git@github.com:akovalyov/facebook-desktop.git
+cd facebook-desktop
+npm install
+````
+
+Launching
+=========
+
+```sh
+./node_modules/.bin/electron .
+```
