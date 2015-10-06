@@ -1,5 +1,10 @@
-var app = require('app');  // Module to control application life.
-var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var app = require('app'); // Module to control application life.
+var BrowserWindow = require('browser-window'); // Module to create native browser window.
+var Menu = require('menu');
+var MenuItem = require('menu-item');
+var Tray = require('tray');
+EventEmitter = require('events').EventEmitter
+var tray = null;
 // Report crashes to our server.
 require('crash-reporter').start();
 
@@ -20,13 +25,28 @@ app.on('window-all-closed', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1024, height: 768, 'title-bar-style': 'hidden'});
+  tray = new Tray('res/tray.png');
+  mainWindow = new BrowserWindow({
+    width: 1024,
+    height: 768,
+    'title-bar-style': 'hidden',
+    title: 'Facebok Desktop'
+  });
   mainWindow.setMenu(null);
 
   // and load the index.html of the app.
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
-
-  // Open the DevTools.
+  var forceExit = false;
+  var contextMenu = Menu.buildFromTemplate([{
+    label: 'Exit',
+    type: 'radio',
+    click: function() {
+      forceExit = true;
+      mainWindow.close();
+    }
+  }]);
+  tray.setToolTip('Facebook Desktop tray.');
+  tray.setContextMenu(contextMenu); // Open the DevTools.
   // mainWindow.openDevTools();
 
   // Emitted when the window is closed.
@@ -35,5 +55,14 @@ app.on('ready', function() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+  mainWindow.on('close', function(event) {
+    if (!forceExit) {
+      event.preventDefault();
+      mainWindow.minimize();
+    }
+  });
+  tray.on('clicked', function(event) {
+    mainWindow.focus()
   });
 });
