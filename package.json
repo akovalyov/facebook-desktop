@@ -29,7 +29,8 @@
   "devDependencies": {
     "babel-eslint": "^3.1.23",
     "electron-prebuilt": "^0.33.6",
-    "eslint": "^0.24.1"
+    "eslint": "^0.24.1",
+    "node-env-file": "^0.1.7"
   },
   "optionalDependencies": {
     "appdmg": "^0.3.2"
