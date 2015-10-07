@@ -11,13 +11,13 @@ Because I don't want it to search through dozenz of tabs
 
 ## How
 
-It is possible thanks to atom electron project. This app is based on [https://github.com/Aluxian/electron-superkit](really super kit)
+It is possible thanks to atom electron project. This app is based on (https://github.com/Aluxian/electron-superkit)[really super kit]
 
-## Is it safe?/I want more details
+## Is it safe?
 
-Short: Yes, it is.
+Short answer: Yes, it is.
 
-Long: Basically it is just a webview with single src. There is no cookies reading/sniffig from app itself.
+Long answer: Basically it is just a webview with single src. There is no cookies reading/sniffig from app itself.
 Everything is does is just wrapping the facebook website.
 
 

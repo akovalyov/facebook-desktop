@@ -1,8 +1,8 @@
 {
-  "name": "superkit",
-  "productName": "SuperKit",
-  "version": "0.2.2",
-  "description": "An Electron starter kit with super powers.",
+  "name": "facebook-desktop",
+  "productName": "Facebook App",
+  "version": "0.0.1",
+  "description": "Unofficial Facebook desktop application",
   "main": "./scripts/browser/main.js",
   "dependencies": {
     "babel-runtime": "^5.6.20",
@@ -16,15 +16,15 @@
     "postinstall": "npm dedupe"
   },
   "license": "MIT",
-  "author": "Alexandru Rosianu <me@aluxian.com>",
-  "homepage": "https://github.com/Aluxian/electron-superkit",
+  "author": "Andrew Kovalyov <andrew.kovalyoff@gmail.com>",
+  "homepage": "https://github.com/akovalyov/facebook-desktop",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aluxian/electron-superkit.git"
+    "url": "https://github.com/akovalyov/facebook-desktop.git"
   },
   "crashReporter": {
-    "productName": "SuperKit",
-    "companyName": "Aluxian",
+    "productName": "Facebook Desktop",
+    "companyName": "FOSS",
     "submitUrl": "http://localhost:1127/post"
   },
   "updater": {
