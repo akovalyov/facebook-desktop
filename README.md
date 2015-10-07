@@ -11,7 +11,7 @@ Because I don't want it to search through dozenz of tabs
 
 ## How
 
-It is possible thanks to atom electron project. This app is based on (https://github.com/Aluxian/electron-superkit)[really super kit]
+It is possible thanks to atom electron project. This app is based on [really super kit](https://github.com/Aluxian/electron-superkit)
 
 ## Is it safe?
 

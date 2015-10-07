@@ -184,8 +184,8 @@ gulp.task 'pack:win32:portable', ['build:win32', 'clean:dist:win32'], (done) ->
 # Pack for all the platforms
 gulp.task 'pack', [
   'pack:darwin64'
-  'pack:linux32'
-  'pack:linux64'
+  'pack:linux32:deb'
+  'pack:linux64:deb'
   'pack:win32:installer'
   'pack:win32:portable'
 ]
