@@ -112,7 +112,7 @@ gulp.task 'pack:darwin64', ['build:darwin64', 'clean:dist:darwin64'], (done) ->
         async.apply fs.writeFile, './build/linux' + arch + '/opt/' + manifest.name + '/pkgtarget', target
 
         # Package the app
-        async.apply cp.exec, 'fpm ' + args.join(' ')
+        async.apply cp.exec, 'bundle exec fpm ' + args.join(' ')
       ], done
 
 # Create the win32 installer; only works on Windows

@@ -29,6 +29,8 @@ Everything is does is just wrapping the facebook website.
 git clone git@github.com:akovalyov/facebook-desktop.git
 cd facebook-desktop
 npm install
+#optional, for deb signing
+bundle install --path vendor/bundle
 ````
 
 ### Launching
