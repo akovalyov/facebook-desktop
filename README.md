@@ -1,39 +1,46 @@
-What
-====
+![Electron SuperKit Logo](docs/logo.png)
 
-Standalone app with facebook website access
+[![Build status](https://ci.appveyor.com/api/projects/status/7u19ki1r7pofwr25/branch/deploy?svg=true)](https://ci.appveyor.com/project/Aluxian/electron-superkit/branch/deploy)
+[![Dependency Status](https://david-dm.org/Aluxian/electron-superkit/status.svg)](https://david-dm.org/Aluxian/electron-superkit#info=dependencies)
+[![Join the chat at https://gitter.im/Aluxian/electron-superkit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Aluxian/electron-superkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/aluxian)
 
-Why
-===
+:zap: *An Electron starter kit with super powers.* :zap:
 
-Because I want to run it in separate process with its own cookies, local storage etc.
-Because I don't want it to search through dozenz of tabs
+[Electron](http://electron.atom.io/) lets you write cross-platform desktop applications using JavaScript, HTML and CSS. It is based on io.js and Chromium and is used in the [Atom](https://atom.io/) editor.
 
-How
-==
+Electron SuperKit uses [Gulp](http://gulpjs.com/) to build, sign, pack and publish your awesome apps. All the Electron goodies are included:
 
-It is possible thanks to atom eletron project
+- native crash reporting
+- windows installer
+- debugging & profiling
+- native menus & notifications
 
-Is it safe?/I want more details
-===============================
+Squirrel updates for OS X and Windows are NOT implemented. Instead, I created a custom updater that just compares the local package.json with a remote one on startup.
 
-Short: Yes, it is.
+:fire: Extra:
 
-Long: Basically it is just a webview with single src. There is no cookies reading/sniffig from app itself.
-Everything is does is just wrapping the facebook website.
+- dmg installer for OS X
+- deb & rpm packages for Linux
+- write ES6 JavaScript, ship ES5 code
+- write LESS stylesheets, ship CSS code
+- use [AppVeyor](http://www.appveyor.com/) to build Windows releases
+- task to publish releases to GitHub
+- live reload in development
 
-Installation
-============
+Other ideas, not done yet:
 
-````sh
-git clone git@github.com:akovalyov/facebook-desktop.git
-cd facebook-desktop
-npm install
-````
+- sign the RPM
+- use a custom logger (bunyan, winston)
 
-Launching
-=========
+> **Note**: The kit is not finished. I'm still working on polishing some features and making others work. Why not join me? I'm on Gitter :)
 
-```sh
-./node_modules/.bin/electron .
-```
+## Getting started :sparkles:
+
+Everything you need to know ~~is~~ should be in the wiki. I'm still working on it, so there might still be some missing pieces. If you need help with anything just ask and I'll write about it.
+
+[Get Started](https://github.com/Aluxian/electron-superkit/wiki/Home)
+
+## Contributions :pray:
+
+Contributions are welcome! For feature requests and bug reports please [submit an issue](https://github.com/Aluxian/electron-superkit/issues) or get in touch with me on [Gitter](https://gitter.im/Aluxian/electron-superkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) or Twitter [@aluxian](https://twitter.com/aluxian).
