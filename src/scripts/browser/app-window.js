@@ -45,6 +45,11 @@ class AppWindow extends EventEmitter {
       shell.openExternal(url);
     });
 
+    browserWindow.on('minimize', function(event){
+      event.preventDefault();
+      this.hide();
+    });
+
     return browserWindow;
   }
 
@@ -65,13 +70,19 @@ class AppWindow extends EventEmitter {
   }
 
   /**
-   * Close the window.
+   * Minimize to tray on close.
    */
   close() {
     this.window.close();
-    this.window = null;
   }
 
+  focus() {
+    this.window.focus();
+  }
+
+  hide() {
+    this.window.hide();
+  }
 }
 
 export default AppWindow;

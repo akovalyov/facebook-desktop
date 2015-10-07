@@ -7,6 +7,8 @@ import BrowserWindow from 'browser-window';
 
 import AppMenu from './app-menu';
 import AppWindow from './app-window';
+import AppTray from './app-tray';
+
 import Updater from './updater';
 
 class Application extends EventEmitter {
@@ -37,6 +39,7 @@ class Application extends EventEmitter {
     // Create and show the main window
     this.mainWindow = new AppWindow();
     this.mainWindow.loadUrl(`file://${path.resolve(__dirname, '..', '..', 'html', 'index.html')}`);
+    this.tray = this.createTray();
   }
 
   /**
@@ -84,7 +87,28 @@ class Application extends EventEmitter {
 
     return menu;
   }
+  createTray() {
+    const tray = new AppTray(this.manifest);
 
+    return tray;
+  }
+
+  toggleVisibility() {
+    if (this.mainWindow) {
+      var isVisible = this.mainWindow.window.isVisible();
+
+      if (isVisible) {
+        this.mainWindow.hide();
+      } else {
+        this.mainWindow.show();
+      }
+    } else {
+      logger.debug('Browser window visibility toggling requested but browser window as not found');
+    }
+  }
+  onTrayClicked() {
+    this.toggleVisibility();
+  }
 }
 
 export default Application;
