@@ -101,12 +101,12 @@ gulp.task 'pack:darwin64', ['build:darwin64', 'clean:dist:darwin64'], (done) ->
 
       async.series [
         # First, compress the source files into an asar archive
-        async.apply asar.createPackage,
-          './build/linux' + arch + '/opt/' + manifest.name + '/resources/app',
-          './build/linux' + arch + '/opt/' + manifest.name + '/resources/app.asar'
+        # async.apply asar.createPackage,
+          # './build/linux' + arch + '/opt/' + manifest.name + '/resources/app',
+          # './build/linux' + arch + '/opt/' + manifest.name + '/resources/app.asar'
 
         # Remove leftovers
-        async.apply del, './build/linux' + arch + '/opt/' + manifest.name + '/resources/app'
+        # async.apply del, './build/linux' + arch + '/opt/' + manifest.name + '/resources/app'
 
         # Create a file with the target name
         async.apply fs.writeFile, './build/linux' + arch + '/opt/' + manifest.name + '/pkgtarget', target

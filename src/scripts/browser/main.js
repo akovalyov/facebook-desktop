@@ -43,13 +43,13 @@ process.on('uncaughtException', error => console.error(error.stack));
 
   // Check for update and create the main app object
   app.on('ready', function() {
+    global.application = new Application(manifest, argv);
+
     Updater.checkAndPrompt(manifest, false)
       .then(function(willUpdate) {
         if (willUpdate) {
           return app.quit();
         }
-
-        global.application = new Application(manifest, argv);
       })
       .catch(::console.error);
   });

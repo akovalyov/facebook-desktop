@@ -50,11 +50,37 @@ class Application extends EventEmitter {
   createMenu() {
     const menu = new AppMenu();
 
+    return this.assignEvents(menu);
+  }
+  createTray() {
+    const tray = new AppTray(this.manifest);
+
+    return this.assignEvents(tray);
+  }
+
+  toggleVisibility() {
+    if (this.mainWindow) {
+      var isVisible = this.mainWindow.window.isVisible();
+
+      if (isVisible) {
+        this.mainWindow.hide();
+      } else {
+        this.mainWindow.show();
+      }
+    } else {
+      logger.debug('Browser window visibility toggling requested but browser window as not found');
+    }
+  }
+  onTrayClicked() {
+    this.toggleVisibility();
+  }
+  assignEvents(menu) {
     // Handle application events
     menu.on('application:quit', ::app.quit);
-
+    menu.on('application:focus', function(){
+      global.application.mainWindow.show();
+    });
     menu.on('application:show-settings', function() {
-
     });
 
     menu.on('application:open-url', function(menuItem) {
@@ -86,28 +112,6 @@ class Application extends EventEmitter {
     });
 
     return menu;
-  }
-  createTray() {
-    const tray = new AppTray(this.manifest);
-
-    return tray;
-  }
-
-  toggleVisibility() {
-    if (this.mainWindow) {
-      var isVisible = this.mainWindow.window.isVisible();
-
-      if (isVisible) {
-        this.mainWindow.hide();
-      } else {
-        this.mainWindow.show();
-      }
-    } else {
-      logger.debug('Browser window visibility toggling requested but browser window as not found');
-    }
-  }
-  onTrayClicked() {
-    this.toggleVisibility();
   }
 }
 

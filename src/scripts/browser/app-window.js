@@ -2,6 +2,7 @@ import shell from 'shell';
 
 import BrowserWindow from 'browser-window';
 import EventEmitter from 'events';
+import path from 'path';
 
 class AppWindow extends EventEmitter {
 
@@ -16,6 +17,7 @@ class AppWindow extends EventEmitter {
     const defaults = {
       width: 1024,
       height: 768,
+      icon: path.resolve(__dirname, '..', '..', 'images', 'tray.png'), //leaving it as tray icon @todo icon resolver
       'web-preferences': {
         'webaudio': true,
         'web-security': false,

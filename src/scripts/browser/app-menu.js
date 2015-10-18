@@ -48,7 +48,6 @@ class AppMenu extends EventEmitter {
       }
     });
   }
-
 }
 
 export default AppMenu;
