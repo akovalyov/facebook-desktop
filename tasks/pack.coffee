@@ -126,10 +126,10 @@ gulp.task 'pack:win32:installer', ['build:win32', 'clean:dist:win32'], (done) ->
 
   async.series [
     # First, compress the source files into an asar archive
-    async.apply asar.createPackage, './build/win32/resources/app', './build/win32/resources/app.asar'
+#    async.apply asar.createPackage, './build/win32/resources/app', './build/win32/resources/app.asar'
 
     # Remove leftovers
-    async.apply del, './build/win32/resources/app'
+#    async.apply del, './build/win32/resources/app'
 
     # Create the installer
     (callback) ->
