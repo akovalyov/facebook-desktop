@@ -10,6 +10,7 @@ import AppWindow from './app-window';
 import AppTray from './app-tray';
 
 import Updater from './updater';
+import webFrame from 'web-frame';
 
 class Application extends EventEmitter {
 
@@ -96,7 +97,12 @@ class Application extends EventEmitter {
         })
         .catch(::console.error);
     });
-
+    menu.on('application:encrease-zoom', function(){
+      webFrame.setZoomLevel(webFrame.getZoomLevel() + 1);
+    });
+    menu.on('application:decrease-zoom', function(){
+      webFrame.setZoomLevel(webFrame.getZoomLevel() - 1);
+    });
     // Handle window events
     menu.on('window:reload', function() {
       BrowserWindow.getFocusedWindow().reload();
