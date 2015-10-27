@@ -10,8 +10,8 @@
     label: '&View'
     submenu: [
       #buggy key bindings in atom
-      { label: '&Decrease on 20%', accelerator: 'Ctrl-=', command: 'application:decrease-zoom' }
-      { label: '&Encrease on 20%', accelerator: 'Ctrl+=', command: 'application:encrease-zoom' }
+      { label: '&Decrease on 10%', accelerator: 'Ctrl+-', command: 'application:decrease-zoom' }
+      { label: '&Encrease on 10%', accelerator: 'Ctrl+=', command: 'application:encrease-zoom' }
       { label: '&Rezet zoom', accelerator: 'Ctrl+0', command: 'application:reset-zoom' }
     ]
   }
