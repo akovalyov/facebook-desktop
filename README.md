@@ -17,7 +17,7 @@ It is possible thanks to atom electron project. This app is based on [really sup
 
 Short answer: Yes, it is.
 
-Long answer: Basically it is just a webview with single src. There is no cookies reading/sniffig from app itself.
+Long answer: Basically it is just a webview with single src. There is no cookies reading/sniffing from app itself.
 Everything is does is just wrapping the facebook website.
 
 

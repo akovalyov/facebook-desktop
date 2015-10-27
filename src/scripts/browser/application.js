@@ -96,7 +96,15 @@ class Application extends EventEmitter {
         })
         .catch(::console.error);
     });
-
+    menu.on('application:encrease-zoom', function(){
+      global.application.mainWindow.window.webContents.send('zoom:encrease');
+    });
+    menu.on('application:decrease-zoom', function(){
+      global.application.mainWindow.window.webContents.send('zoom:decrease');
+    });
+    menu.on('application:reset-zoom', function(){
+      global.application.mainWindow.window.webContents.send('zoom:reset');
+    });
     // Handle window events
     menu.on('window:reload', function() {
       BrowserWindow.getFocusedWindow().reload();

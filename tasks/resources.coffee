@@ -5,27 +5,26 @@ manifest = require '../src/package.json'
 
 # Move and process the resources for darwin64
 gulp.task 'resources:darwin', ->
-  templateFilter = filter ['*.plist', '*.json']
+  templateFilter = filter(['*.plist', '*.json'], {restore: true})
 
   gulp.src './resources/darwin/**/*'
     .pipe templateFilter
     .pipe mustache manifest
-    .pipe templateFilter.restore()
+    .pipe templateFilter.restore
     .pipe gulp.dest './build/resources/darwin'
 
 # Move and process the resources for linux32 and linux64
 gulp.task 'resources:linux', ->
-  templateFilter = filter ['*.desktop', '*.sh']
+  templateFilter = filter(['*.desktop', '*.sh'], {restore: true})
 
   manifest.linux.name = manifest.name
   manifest.linux.productName = manifest.productName
   manifest.linux.description = manifest.description
   manifest.linux.version = manifest.version
-
   gulp.src './resources/linux/**/*'
     .pipe templateFilter
     .pipe mustache manifest.linux
-    .pipe templateFilter.restore()
+    .pipe templateFilter.restore
     .pipe gulp.dest './build/resources/linux'
 
 # Move the resources for win32
