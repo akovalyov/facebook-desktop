@@ -6,7 +6,15 @@
 </head>
 <body>
   <div id="preloader"></div>
-  <webview id="webview" src="https://facebook.com/" allowpopups></webview>
+  <webview id="webview"
+  src="https://www.facebook.com/"
+  allowpopups="on"
+  autosize="on"
+  minwidth="768"
+  minheight="1024"
+  preload="../scripts/renderer/reset-webview-zoom.js"
+  partition="persist:facebook"
+  ></webview>
   <script type="text/javascript" src="../scripts/renderer/default.js"></script>
 </body>
 </html>

@@ -19,3 +19,10 @@ ipc.on('zoom:decrease', function() {
 ipc.on('zoom:reset', function() {
   webframe.setZoomLevel(0);
 });
+
+webview.addEventListener('console-message', function(e) {
+  console.log('Guest page logged a message:', e.message);
+});
+webview.addEventListener('new-window', function(e) {
+  require('shell').openExternal(e.url);
+});
