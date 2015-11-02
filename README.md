@@ -2,16 +2,16 @@
 
 ## What
 
-Standalone app with facebook website access
+Standalone app with facebook website access.
 
 ## Why
 
 Because I want to run it in separate process with its own cookies, local storage etc.
-Because I don't want it to search through dozenz of tabs
+Because I don't want it to search through dozenz of tabs.
 
 ## How
 
-It is possible thanks to atom electron project. This app is based on [really super kit](https://github.com/Aluxian/electron-superkit)
+It is possible thanks to atom electron project. This app is based on [really super kit](https://github.com/Aluxian/electron-superkit).
 
 ## Is it safe?
 
