@@ -29,7 +29,7 @@ manifest = require '../src/package.json'
       .pipe cson()
       .pipe gulp.dest dir + '/menus'
 
-  # Compile styles
+  # Compile stylesl6 to es
   gulp.task 'compile:' + dist + ':styles', ['clean:build:' + dist], ->
     gulp.src './src/styles/**/*.less'
       .pipe plumber -> beeper()
@@ -41,7 +41,7 @@ manifest = require '../src/package.json'
   gulp.task 'compile:' + dist + ':scripts', ['clean:build:' + dist], ->
     gulp.src './src/scripts/**/*.js'
       .pipe plumber -> beeper()
-      .pipe babel()
+      .pipe babel({"presets": ["stage-0", "es2015"]})
       .pipe gulp.dest dir + '/scripts'
       .pipe livereload()
 
