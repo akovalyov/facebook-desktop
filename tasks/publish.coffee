@@ -13,7 +13,7 @@ gulp.task 'publish:github', ['pack:linux32:deb', 'pack:linux64:deb'], ->
     .pipe githubRelease
       token: process.env.GITHUB_TOKEN
       manifest: manifest
-      prelease: true,
+      prerelease: true,
       repo: 'facebook-desktop'
       owner: 'akovalyov'
 
